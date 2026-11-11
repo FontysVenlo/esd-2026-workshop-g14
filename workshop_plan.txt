@@ -1,0 +1,68 @@
+PLAN
+1. Welcome
+
+2. Agenda - Today we gonna do
+
+3. What is WebAssembly? - Quick intro
+    > write once, run everywhere
+
+4. WebAssembly in Web Browser - how it works - next to JS engine
+    > real word examples - FIGMA etc.
+
+5. Hello World example - calculator with C
+    > Write C code 
+    > Compile - (check if can test with GCC for errors and warnings)
+    > Show them the commands but also povide Makefile and cheetsheet with the commands
+    > Inspect the glue js file - short description what it does
+    > Write main HTML - the field inputs for numbers and button and result label
+    > Use glue js to call wasm function
+    > Check in browser if it works
+
+6. ENV SETUP TIME
+    > clone the repo
+    > run docker
+    > run docker-compose up
+    > docker ps to see it its there
+    > tryout run (run Makefile - prepere the test file)
+
+7. ACTIVITY 1
+Hello world 2 - make calculator again - change the operation
+    > main HTML schema (with basic JS)
+
+8. ACTIVITY 2
+Reverse an array
+    > Write array of numbers in JS (1, 2, 3, 4, 5)
+    > write function in C that takes and array of integeres and reverse it
+    > print the original array on screent
+    > after button, call function and display again
+    PROVIDE:
+        * README with cheetsheet on array operations in C + type casting
+        * HTML schema 
+
+MEMORY LAYOUT - THEORY
+    > Js have own memory
+    > wasm have own and its linear
+    > explain that js passing arguments, its copying the data from js memory to wasm memory
+    > explain the type casting (number in js, in C we have uint8 int16 so on)
+    > We do not want to do big copy (like image)  - so lets keep it only in wasm  - can be accessed by js
+
+ENV SETUP
+Docker container - ubuntu 
+    > Emscripten (fix PATH & check if the C Emscripten lib is there)
+    > SHould have volume dir that connects with host
+    > Makefile with command for executing Emscripten out from docker
+
+
+    
+MATERIALS
+1. Slides
+    > Agenda
+    > What is WebAssembly
+    > WebAssembly in browser theory
+        * diagram of browser engine
+        * arrows as calls
+        * java reference
+    > Env setup slide (link to repo + commands)
+    > Concise slide activity 1 with cheetsheet or instructions 
+    > Concise slide activity 2 with cheetsheet or instructions 
+
